@@ -10,6 +10,7 @@ import 'package:news_hacker_app/helpers/database_helper.dart';
 import 'package:news_hacker_app/models/local_data_model.dart';
 import 'package:news_hacker_app/models/stories_model.dart';
 import 'package:news_hacker_app/repository/repository.dart';
+import 'package:news_hacker_app/screens/main_screen.dart';
 import 'package:rxdart/rxdart.dart';
 
 class StoriesBloc extends BlocBase {
@@ -41,12 +42,39 @@ class StoriesBloc extends BlocBase {
   Stream<List<StoriesModel>> get commentKidsListById => _commentsStreamController.stream;
 
   Future<void> _loadInitTopStories() async {
-    _newsIdList.addAll(await _repository.loadNewsIds());
-    loadSizeNewsPage(pageSize: INIT_PAGE_SIZE);
+    try {
+      _newsIdList.addAll(await _repository.loadNewsIds());
+      loadSizeNewsPage(pageSize: INIT_PAGE_SIZE);
+    } catch (e){
+      await Get.offAll(MainScreen());
+      Fluttertoast.showToast(
+          msg: 'Erro :(',
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.redAccent,
+          textColor: Colors.white,
+          fontSize: 12.0);
+    }
+
   }
 
   Future<StoriesModel> loadNewById(int id) async {
-    StoriesModel news = await _repository.loadNewById(id);
+    StoriesModel news;
+    try {
+      news = await _repository.loadNewById(id);
+    } catch (e){
+      EasyLoading.dismiss();
+      await Get.offAll(MainScreen());
+      Fluttertoast.showToast(
+          msg: 'Erro :(',
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.redAccent,
+          textColor: Colors.white,
+          fontSize: 12.0);
+    }
     return news;
   }
 
@@ -59,7 +87,20 @@ class StoriesBloc extends BlocBase {
   }
 
   Future<void> loadCommentsSizePage() async {
-    _commentsStreamController.sink.add(newsKidsList);
+    try {
+      _commentsStreamController.sink.add(newsKidsList);
+    } catch (e) {
+      await Get.offAll(MainScreen());
+      Fluttertoast.showToast(
+          msg: 'Erro :(',
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.redAccent,
+          textColor: Colors.white,
+          fontSize: 12.0);
+    }
+
   }
 
 
@@ -76,8 +117,6 @@ class StoriesBloc extends BlocBase {
   }
 
   bool hasMoreNews() => _currentNewsIndex < _newsIdList.length;
-
-  List<StoriesModel> listSharedPrefs = [];
 
   Future<void> saveNewsBloc(int id) async {
     EasyLoading.show(

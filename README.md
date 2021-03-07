@@ -9,7 +9,7 @@ A new Flutter application.
 Steps
  Para realizar login user - teste@teste.com /// 111111
 
-<p align="center">Projeto teste para consumo de API </p>  <a href="url" target="_blank">https://github.com/HackerNews/API/blob/master/README.md</a>
+<p align="center">Projeto teste para consumo de API </p>  <a href="url" target="_blank"> https://github.com/HackerNews/API/blob/master/README.md </a>
 
 <p Utilizando BloC como padrão e gerenciamento de estados, consumindo streams e utlizando controllers para tal. O bloc ajuda na manutenção e tratativa de estados em seu codigo. </p>
 
