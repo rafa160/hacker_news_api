@@ -39,6 +39,4 @@ List de Bibliotecas:
 
 <p align="center">Possiveis melhorias : Melhorar tratamento de Persistencia local,Melhoria no layout.</p>
 
-<p align="center">Requisito na versão Flutter: 1.22.6 - Atualmente estou utilizando a v- 2.0 e tive problemas para downgrade minha versão(Não identifiquei todos os erros</p>
-<p mas verifiquei alguns conflitos na chamada do downgrade)</p>
-<p com isso tive que realizar alguns mudanças no pubspec. talvez não seja possivel executar o App na versão 1.22(Estou tentando reverter a situação.)</p>
+<p align="center">Requisito na versão Flutter: 1.22.6 -  única versão disponivel que conseguir realizar o downgrade foi 1.22.3.</p>
