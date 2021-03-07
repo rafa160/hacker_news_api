@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "476555165088",
+    "project_id": "news-hacker-f6d6e",
+    "storage_bucket": "news-hacker-f6d6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476555165088:android:5f1747dd545727f5acb8c5",
+        "android_client_info": {
+          "package_name": "com.news_hacker_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476555165088-h0oj8d3k8pf59ecl7lcv2ubsba4kr8ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu8Fo_RyhPrQUqw7I-_OuM1bNEu_cFQ-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476555165088-h0oj8d3k8pf59ecl7lcv2ubsba4kr8ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
