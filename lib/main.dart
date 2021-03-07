@@ -4,6 +4,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:news_hacker_app/blocs/stories_bloc.dart';
 import 'package:news_hacker_app/blocs/user_bloc.dart';
+import 'package:news_hacker_app/screens/splash_screen.dart';
 
 void main() {
   runApp(BlocProvider(
